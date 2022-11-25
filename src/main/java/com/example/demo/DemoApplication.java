@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class DemoApplication {
+    
+    @Value("${mockaadhar}")
+	    private String mockAadharNumber;
 
     @RequestMapping("/")
     String home() {
-        return "Hello World!";
+        return "Hello World!" + mockAadharNumber;
     }
 
     public static void main(String[] args) {
